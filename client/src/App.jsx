@@ -5,8 +5,8 @@ import AddService from './pages/AddService';
 import ServiceDetails from './pages/ServiceDetails';
 import './App.css';
 
-const baseUrl = import.meta.env.VITE_API_URL || '';
-const API_URL = baseUrl + '/api';
+const baseUrl = import.meta.env.VITE_API_URL || '/';
+const API_URL = baseUrl + 'api';
 
 function App() {
   return (
