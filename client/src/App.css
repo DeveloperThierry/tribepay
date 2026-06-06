@@ -1,0 +1,222 @@
+:root { 
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; 
+}
+
+body { 
+  /* FINANCIAL OVERHAUL: Professional light slate/gray background */
+  background-color: #f4f6f9; 
+  margin: 0; 
+  padding: 0; 
+  color: #1e293b; 
+}
+
+.container { 
+  max-width: 800px; 
+  margin: 0 auto; 
+  padding: 20px; 
+}
+
+/* ==========================================
+   HEADER & NAVIGATION (Corporate Navy style)
+   ========================================== */
+nav { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  background-color: #0f172a; 
+  padding: 15px 30px; 
+  margin-bottom: 30px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+nav h1 {
+  color: #ffffff;
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+/* ==========================================
+   CARDS & CONTAINERS
+   ========================================== */
+.card { 
+  background: #ffffff; 
+  padding: 20px; 
+  border-radius: 10px; 
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0; 
+  margin-bottom: 20px; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+}
+
+h2, h3 {
+  color: #0f172a; 
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.card h2, .card h3, .card h4, .card p, .card span {
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: left;
+}
+
+.card div, .card section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* ==========================================
+   BUTTONS & STATUSES (Polished Financial Accents)
+   ========================================== */
+.btn { 
+  padding: 10px 18px; 
+  border-radius: 6px; 
+  border: none; 
+  cursor: pointer; 
+  text-decoration: none; 
+  font-weight: 600; 
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  filter: brightness(0.92);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* Standard Button Variations */
+.btn-primary { background-color: #10b981; color: white; }
+.btn-secondary { background-color: #2563eb; color: white; }
+.btn-danger { background-color: #ef4444; color: white; }
+
+/* FIX: Clean, elegant toggle states to replace the heavy dark gray look */
+.btn-paid {
+  background-color: #d1fae5; /* Soft, upscale emerald tint background */
+  color: #065f46;            /* Deep accessible forest green text */
+  border: 1px solid #a7f3d0;
+}
+.btn-paid:hover {
+  background-color: #a7f3d0;
+}
+
+.btn-unpaid {
+  background-color: #f1f5f9; /* Slate background light gray */
+  color: #475569;            /* Muted professional text color */
+  border: 1px solid #cbd5e1;
+}
+.btn-unpaid:hover {
+  background-color: #e2e8f0;
+}
+
+/* Dynamic Inline Text Colors if used elsewhere */
+.status-paid { color: #10b981; font-weight: 600; }
+.status-unpaid { color: #ef4444; font-weight: 600; }
+
+/* ==========================================
+   FORM & FULL-WIDTH INPUT FIELDS
+   ========================================== */
+form { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 14px; 
+  width: 100%;
+}
+
+input { 
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 12px 14px; 
+  border: 1.5px solid #cbd5e1; 
+  border-radius: 6px; 
+  background-color: #f8fafc;
+  color: #0f172a;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.15s ease;
+}
+
+input:focus {
+  border-color: #2563eb; 
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); 
+}
+
+input::placeholder {
+  color: #94a3b8;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+form .btn {
+  align-self: center;
+  padding: 12px 30px;
+  background-color: #10b981; 
+}
+
+/* ==========================================
+   BUTTONS & STATUSES (Polished Financial Accents)
+   ========================================== */
+   .btn { 
+    padding: 10px 18px; 
+    border-radius: 6px; 
+    border: none; 
+    cursor: pointer; 
+    text-decoration: none; 
+    font-weight: 600; 
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+  
+  .btn:hover {
+    filter: brightness(0.92);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  }
+  
+  .btn:active {
+    transform: scale(0.98);
+  }
+  
+  /* FIX: Premium, high-contrast states to replace the muddy green-on-gray look */
+  .btn-paid {
+    background-color: #10b981 !important; /* Rich, vibrant emerald green */
+    color: #ffffff !important;            /* Crisp, pure white text for perfect contrast */
+    box-shadow: 0 1px 2px rgba(16, 185, 129, 0.2);
+  }
+  
+  .btn-unpaid {
+    background-color: #2563eb !important; /* Sharp corporate banking blue */
+    color: #ffffff !important;            /* Clean white text */
+    box-shadow: 0 1px 2px rgba(37, 99, 235, 0.2);
+  }
+  
+  /* Standard Utility Variations (if used elsewhere) */
+  .btn-primary { background-color: #10b981; color: white; }
+  .btn-secondary { background-color: #2563eb; color: white; }
+  .btn-danger { background-color: #ef4444; color: white; }
+  
+  .status-paid { color: #10b981; font-weight: 600; }
+  .status-unpaid { color: #ef4444; font-weight: 600; }

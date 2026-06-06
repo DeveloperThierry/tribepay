@@ -9,6 +9,42 @@ export const getServices = async (req, res) => {
     }
 };
 
+export const getService = async (req, res) => {
+    try {
+        const id = parseInt(req.params.id)
+        const results = await pool.query('SELECT * FROM services WHERE id = $1', [id]);
+        res.status(200).json(results.rows[0]);
+    } catch (error) {
+        res.status(409).json({ error: error.message });
+    }
+};
+
+// Get a single service by ID
+export const getServiceById = async (req, res) => {
+    const id = parseInt(req.params.id);
+    try {
+        const results = await pool.query('SELECT * FROM services WHERE id = $1', [id]);
+        res.status(200).json(results.rows);
+    } catch (error) {
+        res.status(409).json({ error: error.message });
+    }
+};
+
+// Get all contributions for a specific service
+export const getContributions = async (req, res) => {
+    const service_id = parseInt(req.params.id);
+    try {
+        const results = await pool.query(
+            `SELECT c.*, u.username FROM contributions c 
+             JOIN users u ON c.user_id = u.id 
+             WHERE c.service_id = $1`, [service_id]
+        );
+        res.status(200).json(results.rows);
+    } catch (error) {
+        res.status(409).json({ error: error.message });
+    }
+};
+
 export const createService = async (req, res) => {
     const { name, monthly_cost, owner_id } = req.body;
     try {
